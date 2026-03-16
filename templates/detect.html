@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truthify - Detect</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">🛡️ Truthify</div>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/detect">Detect</a>
+    <a href="/about">About</a>
+  </nav>
+</header>
+
+<section class="detect-section">
+
+  <h1>News Detection</h1>
+  <p class="subtitle">Paste a news article to check if it's fake or real</p>
+
+  <div class="detect-box">
+
+    
+<form action="/predict" method="POST">
+    <textarea name="news" placeholder="Paste news here..." required></textarea>
+    <button type="submit" class="detect-btn">Detect News</button>
+</form>
+
+{% if prediction %}
+
+<div class="result-box {{ prediction|lower }}">
+
+  <h2>
+    Prediction:
+    <span class="result-text">{{ prediction }}</span>
+  </h2>
+
+  <p class="desc">
+    {% if prediction == "Fake" %}
+      This article is likely fake news
+    {% else %}
+      This article appears to be real news
+    {% endif %}
+  </p>
+
+  <h4>Confidence</h4>
+
+  <div class="progress-bar">
+    <div class="progress {{ prediction|lower }}" style="width: {{ confidence }}%">
+      <span>{{ confidence }}%</span>
+    </div>
+  </div>
+
+  <div class="analysis">
+    <h4>Analysis Details:</h4>
+    <ul>
+      <li>Text analyzed using TF-IDF and Machine Learning model</li>
+      <li>Prediction based on dataset patterns</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    ⚠ This is an educational ML demo. Verify news from trusted sources.
+  </div>
+
+</div>
+
+{% endif %}
+
+
+
+
+
+  </div>
+
+</section>
+
+<footer class="footer">
+  Truthify — Fake News Detection using ML
+</footer>
+
+</body>
+</html>

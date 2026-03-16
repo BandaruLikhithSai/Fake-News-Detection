@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truthify</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+  <div class="logo">🛡️ Truthify</div>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/detect">Detect</a>
+    <a href="/about">About</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="shield">🛡️</div>
+
+  <h1>Fake News Detection </h1>
+
+  <p>
+    FakeGuard uses machine learning techniques to analyze news articles and detect
+    potential misinformation in Social Media.click the below try button and Paste any headline or article to get an instant credibility assessment.
+  </p>
+
+  <div class="buttons">
+    <button class="primary" onclick="window.location.href='/detect'">
+      Try the Detector →
+    </button>
+
+    <a href="/about" class="link">How It Works</a>
+  </div>
+
+  <!--<div class="stats-top">
+    📊 10 articles analyzed so far
+  </div>-->
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+
+  <div class="stat-card">
+    <h2>6× faster</h2>
+    <p class="bold">Fake news spreads</p>
+    <p>than real news on social media</p>
+  </div>
+
+  <div class="stat-card">
+    <h2>86%</h2>
+    <p class="bold">People deceived</p>
+    <p>of internet users have been fooled</p>
+  </div>
+
+  <div class="stat-card">
+    <h2>$78B</h2>
+    <p class="bold">Economic impact</p>
+    <p>annual cost of misinformation globally</p>
+  </div>
+
+</section>
+
+<!-- COMPARISON -->
+<section class="compare">
+
+  <h2>Can You Tell the Difference?</h2>
+  <p class="subtitle">Compare real vs fake news examples below</p>
+
+  <div class="compare-container">
+
+    <!-- LEFT SIDE -->
+    <div>
+      <h3 class="fake-title">⚠ Fake News Examples</h3>
+
+      <div class="news-box fake">
+        <h4>SHOCKING: Scientists Discover That Water Is Actually Poisonous!!!</h4>
+        <p>
+          You won't believe what scientists found! Share before this gets deleted!
+          They don't want you to know that drinking water is actually killing you slowly...
+        </p>
+        <span class="tag fake-tag">98% Fake</span>
+      </div>
+
+      <div class="news-box fake">
+        <h4>BREAKING: Celebrity Caught in MASSIVE Scandal — Exposed!!!</h4>
+        <p>
+          This is INSANE! An anonymous source reveals the terrifying truth...
+        </p>
+        <span class="tag fake-tag">98% Fake</span>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div>
+      <h3 class="real-title">✔ Real News Examples</h3>
+
+      <div class="news-box real">
+        <h4>New Study Finds Link Between Exercise and Improved Mental Health</h4>
+        <p>
+          According to research published in the Journal of Clinical Psychology...
+        </p>
+        <span class="tag real-tag">98% Real</span>
+      </div>
+
+      <div class="news-box real">
+        <h4>City Council Approves New Public Transit Expansion Plan</h4>
+        <p>
+          Officials said the $4.2 billion infrastructure plan was approved...
+        </p>
+        <span class="tag real-tag">98% Real</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to Check a News Article?</h2>
+  <button class="start" onclick="window.location.href='/detect'">
+    Start Detecting →
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  Truthify — A demonstration tool for fake news awareness
+</footer>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
